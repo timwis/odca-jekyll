@@ -1,0 +1,127 @@
+//@font-face { ////EXAMPLE -- to replace when legal fonts determined
+//  font-family: 'MyWebFont';
+//  src: url('webfont.eot'); /* IE9 Compat Modes */
+//  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//  url('webfont.woff') format('woff'), /* Modern Browsers */
+//  url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+//  url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+//}
+
+//@font-face {
+//  font-family: 'Crete Round', serif;
+//  //src: url('fonts/Crete_Round/CreteRound-Regular.ttf')  format('truetype');
+//  src: url('fonts/Crete_Round/CreteRound-Regular.ttf');
+//  //font-weight: 400;
+//}
+
+//@font-face {
+//  font-family: 'Crete Round', serif;
+//  src: url('fonts/Crete_Round/CreteRound-Italic.ttf')  format('truetype');
+//  font-weight: 400;
+//}
+
+//TODO:  figure out typekit issues: if we'll use fonts from typekit, and under what name
+//RECOMMEND: Don't use typekit, and find a similar font from openly available Google Fonts (Currently, Crete Round webfonts (in .woff format) are not freely available from Google.  Generating it ourselves may not be legal, and we will need to check licenses)
+
+//USE THIS FOR NOW: (note: may affect load time down the road)
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900,100italic,300italic,400italic,500italic,700italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Crete+Round:400,400italic);
+
+$creteRound-font-family: 'Crete Round', serif;
+$creteRound-regular: 400;
+
+@mixin creteRound-font-family {
+  font-family: $creteRound-font-family;
+}
+
+.creteRound-regular {
+  @include creteRound-font-family;
+  font-weight: $creteRound-regular;
+}
+
+// TYPOGRAPHY MIXINS
+// --------------------------------------------------
+.text-thin {
+  font-weight: 200;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+.text-regular {
+  font-weight: 400;
+}
+
+.text-semibold {
+  font-weight: 500;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.component__heading:extend(.text-small, .text-semibold) {
+  line-height: 2;
+  margin-bottom: 0.5rem;
+}
+
+.text-xsmall {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.text-small {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.text-medium {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.text-large {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.text-xlarge {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-blue {
+  color: $brand-primary;
+}
+
+.text-grey-1 {
+  color: $core-grey-1;
+}
+
+.text-grey-2 {
+  color: $core-grey-2;
+}
+
+.text-grey-3 {
+  color: $core-grey-3;
+}
+
+.text-grey-4 {
+  color: $core-grey-4;
+}
+
+.text-grey-5 {
+  color: $core-grey-5;
+}
+
+.text-serif:extend(.creteRound-font-family) {
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}

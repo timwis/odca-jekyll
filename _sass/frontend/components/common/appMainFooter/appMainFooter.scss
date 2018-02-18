@@ -1,0 +1,51 @@
+.appMainFooter {
+  @include odca-border;
+  background-color: $core-grey-5;
+  min-height: 20px;
+  box-sizing: border-box;
+}
+
+.appMainFooter__brand {
+  @extend .text-serif;
+  @extend .text-xlarge;
+  margin-bottom: 0.5rem;
+}
+
+.appMainFooter-row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.appMainFooter-row--pageLinks {
+  background-color: darken($body-bg, 3%);
+}
+
+.appMainFooter-taglineText {
+  @extend .serif;
+  color: $headings-color;
+  margin-bottom: 6.5px;
+  cursor: pointer;
+}
+
+.appMainFooter-linksList {
+  margin-bottom: 0;
+  padding-left: 0;
+
+  li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.appMainFooter-linksList--link {
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+
+  &:hover {
+    color: $headings-color;
+    text-decoration: none;
+  }
+}
+
+
