@@ -34,6 +34,9 @@ jobs:
       #GITHUB_REPO: adborden/odca-jekyll
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "84:e6:5d:fd:1d:8c:53:18:7e:0e:3e:ba:82:49:38:ca"
       - attach_workspace:
           at: .
       - deploy:
