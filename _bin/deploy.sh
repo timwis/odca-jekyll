@@ -6,11 +6,6 @@ set -o nounset
 
 GITHUB_REPO=${GITHUB_REPO:-"adborden/odca-jekyll"}
 
-if [ -z "$GITHUB_TOKEN" ]; then
-    echo "GITHUB_TOKEN is required." >&2
-    exit 1
-fi
-
 # Git init
 cd _site
 git --version
@@ -19,5 +14,5 @@ git config user.name "CA Civic Lab deploy script"
 git config user.email "opencal@googlegroups.com"
 git add .
 git commit -m "Deploy to GitHub Pages"
-git push --force --quiet "https://x-api-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git" master:gh-pages &> /dev/null || ( exit_code=$?; echo Error deploying to GH Pages: exit $exit_code >&2; exit $exit_code )
+git push --force --quiet "git@github.com/${GITHUB_REPO}.git" master:gh-pages &> /dev/null || ( exit_code=$?; echo Error deploying to GH Pages: exit $exit_code >&2; exit $exit_code )
 echo ok
