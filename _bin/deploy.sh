@@ -4,7 +4,7 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-GITHUB_REPO=${GITHUB_REPO:-"adborden/odca-jekyll"}
+GITHUB_REPO=${GITHUB_REPO:-"caciviclab/www.opendisclosure.io"}
 
 # Git init
 cd _site
