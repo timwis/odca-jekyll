@@ -54,4 +54,4 @@ workflows:
             - build
           filters:
             branches:
-              only: feature/ci-cd
+              only: master
