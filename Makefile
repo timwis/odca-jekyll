@@ -3,7 +3,12 @@ build:
 	bundle exec jekyll build
 
 clean:
-	rm -rf _site
+	rm -rf _site \
+	  _data/candidates \
+	  _data/committees \
+	  _data/contributions \
+	  _data/referendum_opposing \
+	  _data/referendum_supporting
 
 production:
 	JEKYLL_ENV=production bundle exec jekyll build
